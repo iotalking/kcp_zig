@@ -28,7 +28,7 @@ pub fn build(b: *std.Build) void {
     const optimize = b.standardOptimizeOption(.{});
 
     const lib = b.addStaticLibrary(.{
-        .name = "zkcp",
+        .name = "kcp_zig",
         // In this case the main source file is merely a path, however, in more
         // complicated build scripts, this could be a generated file.
         .root_source_file = b.path("src/zkcp.zig"),
@@ -43,7 +43,7 @@ pub fn build(b: *std.Build) void {
     b.installArtifact(lib);
 
     const exe = b.addExecutable(.{
-        .name = "zkcp",
+        .name = "kcp_zig",
         .root_source_file = b.path("src/main.zig"),
         .target = target,
         .optimize = optimize,
